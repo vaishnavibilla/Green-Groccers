@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Page Title</title>
+     <script src="
+     https://kit.fontawesome.com/a076d05399.js">
+    </script>
+    <style>
+      ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        width: 25%;
+        height: 120%;
+        position: fixed;
+        overflow: auto;
+        background-color: #00800085;
+      }
+      li a {
+        display: block;
+        color: #000;
+        padding: 8px 16px;
+        text-decoration: none;
+      }
+ 
+      /* Change the link color on hover */
+      li a:hover {
+        background-color: #90faaa;
+        color: #fff;
+      }
+      .icon {
+        margin-right: 10px;
+      }
+  </style>
+</head>
+<body>
+  <ul class="navbar-nav me-auto">
+        <li class = "nav-item">
+          <a href="#" class="active">User Profile</a>
+        </li>
+        <!-- <li class="nav-item dropdown" ngbDropdown>
+          <a class="nav-link dropdown-toggle" id="dropdown01" role="button" data-bs-toggle="dropdown" aria-expanded="false" ngbDropdownToggle>
+            Product
+          </a>
+          <ul class="dropdown-menu"  ngbDropdownMenu aria-labelledby="dropdown01">
+            <li ngbDropdownItem><a class="dropdown-item" href="#">Fruits</a></li>
+            <li ngbDropdownItem><a class="dropdown-item" href="#"></a>Vegetables</li>
+          </ul>
+        </li> -->
+        <div ngbDropdown class="btn-group">
+          <button type="button" class="btn btn-success">Products</button>
+          <button
+            type="button"
+            class="btn btn-success dropdown-toggle dropdown-toggle-split"
+            ngbDropdownToggle
+            aria-expanded="false"
+          >
+            <span class="visually-hidden">Toggle Dropdown</span>
+          </button>
+          <ul ngbDropdownMenu class="dropdown-menu">
+            <li><a class="dropdown-item" routerLink="/fruits">Fruits</a></li>
+            <li><a class="dropdown-item" routerLink="/vegetables">Vegetables</a></li>
+          </ul>
+        </div>
+        
+        <li class = "nav-item">
+          <a href="#" class="active">My Orders</a>
+        </li>
+        <li class = "nav-item">
+          <a href="#" class="active">User Cart</a>
+        </li>
+        <li class = "nav-item">
+          <a routerLink="/about" class="active">About</a>
+        </li> 
+        <li class = "nav-item">
+          <a href="#" class="active">Logout</a>
+        </li>
+    </ul>
+</body>
+</html>
+
+
+

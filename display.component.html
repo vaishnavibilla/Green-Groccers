@@ -1,0 +1,46 @@
+<!-- <head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+        integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+</head>
+
+
+<div class="container">
+    <table class="table table-bordered table-striped table-hover table-sm">
+        <thead>
+        <tr class="bg-info text-white"><th>Name</th><th>Phone-No</th><th>Email-id</th><th>Password</th>
+        </thead>
+        <tbody>
+        <tr *ngFor="let user1 of user">
+            <td>{{user1.name}}</td>
+            <td>{{user1.phoneno}}</td>
+            <td>{{user1.email}}</td>
+            <td>{{user1.password}}</td>
+        </tr>
+    </tbody>
+    </table>
+    </div> -->
+
+
+    <head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+            integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+    </head>
+    
+    
+    <div class="container">
+        <table class="table table-bordered table-striped table-hover table-sm table-success">
+            <thead>
+            <tr class="bg-info text-black"><th>Name</th><th>Phone-No</th><th>Email-id</th><th>Password</th>
+                <th colspan=2>Action</th></tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let user1 of user">
+                <td>{{user1.name}} </td>
+                <td>{{user1.phoneno}}</td>
+                <td>{{user1.email}} </td>
+                <td>{{user1.password}}</td>
+                <td><button (click)="deleteEmp(user)" class="glyphicon glyphicon-trash"></button></td>
+            </tr>
+        </tbody>
+        </table>
+        </div>

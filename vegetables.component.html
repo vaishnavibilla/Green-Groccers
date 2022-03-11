@@ -1,0 +1,26 @@
+<h1 align="center"> VEGETABLES </h1>
+
+
+<div class="row offset-md-1" style="margin-top: 4px;">
+    <div class="col-md-3" *ngFor="let v of vegetables" style="margin-top: 4px;">
+
+        <div class="card" style="width:15rem;" >
+            <div align="center">
+            <img class="card-image" [src]="v.imagePath" alt="Card Image Cap" style="width:150px; height:150px;" />
+        </div>
+            <div class="card-body">
+                <h3 class="card-title"> {{v.vegetableName}}</h3>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <div>  {{v.price | currency:'INR'}} </div>
+                </div>
+
+                <div class="col">
+                    <div> <button class="btn btn-primary" (click)="addToCart(v)"> Add To Cart </button> </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

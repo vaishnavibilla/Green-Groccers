@@ -1,0 +1,26 @@
+<h1 align="center"> FRUITS </h1>
+
+
+<div class="row offset-md-1" style="margin-top: 4px;">
+    <div class="col-md-3" *ngFor="let fruit of fruits" style="margin-top: 4px;">
+
+        <div class="card" style="width:15rem;" >
+            <div align="center">
+            <img class="card-image" [src]="fruit.imagePath" alt="Card Image Cap" style="width:150px; height:150px;" />
+        </div>
+            <div class="card-body">
+                <h3 class="card-title"> {{fruit.fruitName}}</h3>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <div>  {{fruit.price | currency:'INR'}} </div>
+                </div>
+
+                <div class="col">
+                    <div> <button class="btn btn-primary" (click)="addToCart(fruit)"> Add To Cart </button> </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

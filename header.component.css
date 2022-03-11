@@ -1,0 +1,9 @@
+.navbar-nav > li{
+    padding-left:40px;
+    padding-right:40px;
+    font-size: 20px;
+  }
+.navbar-brand
+{
+  font-size: 30px;
+}
