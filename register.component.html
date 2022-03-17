@@ -1,34 +1,54 @@
-<!-- <input type="text" placeholder="USERNAME" [(ngModel)]='user.userName'><br/>
-<input type="text" placeholder="PHONENO" [(ngModel)]='user.phoneno'><br/>
-<input type="text" placeholder="PASSWORD" [(ngModel)]='user.password'><br/>
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+.btn {
+  position: relative;
+  width: 100%;
+  top:100px;
+  left:200px;
+  max-width: 400px;
+}
 
-<input type="submit" value="REGISTER" (click)="showDetails()"> -->
+ .img {
+  width: 1400px;
+  height: 3000px;
+}
 
-<!-- 
-<form #regForm="ngForm" (ngSubmit)="showDetails(regForm.value)" novalidate>
-    Enter UserName      : <input type="text" name="userName"   ngModel #userName=ngModel   required/> <br/>
-    Enter PhoneNo    : <input type="text" name="phoneno" ngModel #phoneno=ngModel required/> <br/>
-    Enter Password     : <input type="text" name="password"  ngModel #password=ngModel  required/> <br/>
-
-    <button [disabled]="!regForm.valid"> Submit </button>
-</form>
-
-<div *ngIf="userName.errors?.required   && userName.touched">   Enter Data in UserName Field </div>
-<div *ngIf="phoneno.errors?.required && phoneno.touched"> Enter Data in PhoneNo Field </div>
-<div *ngIf="password.errors?.required   && password.touched">   Enter Data in Password Field </div>
-
-
- -->
- <div class = "container">
- <h1 style="text-align:center">GREENGROCER REGISTRATION</h1>
- <div align="center" class="details">
-    <input type="text" placeholder="NAME" [(ngModel)]='users.userName' class="form-control"><br/>
-    <input type="text" placeholder="PHONE" [(ngModel)]='users.phoneno' class="form-control"><br/>
-    <input type="text" placeholder="EMAIL" [(ngModel)]='users.email' class="form-control"><br/>
-    <input type="password" placeholder="PASSWORD" [(ngModel)]='users.password' class="form-control"><br/>    
-    <input type="submit" value="REGISTER" (click)="registerEmp()">
+.container .btn:hover {
+  background-color: black;
+}
+</style>
+</head>
+<body>
+    <div style="width: 100%;">
+    <div style="float:left; width:50%; margin-top: 0px;">
+        <img src="./assets/Images/R_Image.jpg" style="width: 1536px; height:697px;"><br><br>
+    </div>
 </div>
-</div>
+<div style="float:right; width:50%;">
+    <div style="font-style: oblique; text-align: center;font-size: 15px;color: white">
+        <br><br><br><br><br><br>
+            <h2><b>GREENGROCER REGISTRATION</b></h2>
+    </div><br><br>        
+            <div align="center" class="container" style="font-style: oblique;">
+                <input type="text" [(ngModel)]='users.userName' placeholder="NAME" class="form-control shadow-sm" style="width: 350px;"><br/>
+                <input type="text" [(ngModel)]='users.phoneno' placeholder="PHONENO" class="form-control shadow-sm" style="width: 350px;"><br/>
+                <input type="text" [(ngModel)]='users.email' placeholder="EMAIL" class="form-control shadow-sm" style="width: 350px;"><br/>
+                <input type="password" [(ngModel)]='users.password' placeholder="PASSWORD" class="form-control col-1 shadow-sm" style="width: 350px;"><br/>  
+                <div class="form-group col-4" style="margin-top: -80px; margin-left: -400px;"> 
+                    <button class="btn btn-success" style="text-align: center;" type="submit" value="REGISTER" (click)="registerEmp()">Register</button>
+                </div> 
+            </div>
+            <!-- <form #registerForm=ngForm (ngSubmit)="registrationSubmit2(registerForm)" novalidate>
+                <input type = "text"     name="name"       placeholder="Name"     ngModel required #name = ngModel/> <br/>
+                <input type = "text"     name="phone"    placeholder="PhoneNo"  ngModel required #phone = ngModel/> <br/>
+                <input type = "email"    name="email"      placeholder="Email"    ngModel required #email = ngModel/> <br/>
+                <input type = "password" name="password"   placeholder="Password" ngModel required #password = ngModel/> <br/>
+                <button [disabled]="!registerForm.valid" (click)="registerEmp()">Submit</button>
+            </form>
+            </div> -->
 
 <!-- <div class="row">
     <div class="col-6 m-auto">
