@@ -1,69 +1,58 @@
-<!-- <head>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
-        integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+.btn {
+  position: relative;
+  width: 100%;
+  top:100px;
+  left:200px;
+  max-width: 400px;
+}
+
+ .img {
+  width: 1400px;
+  height: 3000px;
+}
+
+.container .btn:hover {
+  background-color: black;
+}
+</style>
 </head>
-
-
-
-
-
-<div class="container">
-<div align="center" class="details">
-    <form #loginForm=ngForm (ngSubmit)='loginSubmit2(loginForm.value)' class="form-group" novalidate>
-        <div class="input-group">
-            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-            <input type="text" placeholder="email" name="email" ngModel required #loginId=ngModel
-                class="form-control" minlength="2" maxlength="50" /> <br />
-        </div>
-        
-        <div class="input-group">
-            <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-            <input type="password" placeholder="Password" name="password" ngModel required #password=ngModel
-                class="form-control" minlength="2" maxlength="10" /> <br />
-        </div>
-        
-        <button [disabled]="!loginForm.valid" class="btn btn-outline-primary">Submit</button>
-
-    </form>
-    <div class="text-danger">
-        <div *ngIf='loginId.errors?.required && loginId.touched'> Enter data into loginId field </div>
-        <div *ngIf='loginId.errors?.minlength && loginId.touched'> Enter data atleast 2 characters in loginId field
-        </div>
-
-        <div *ngIf='password.errors?.required && password.touched'> Enter data into password field </div>
-        <div *ngIf='password.errors?.minlength && password.touched'> Enter data atleast 2 characters in password field
-        </div>
+<body>
+    <div style="width: 100%;">
+    <div style="float:left; width:50%; margin-top: 0px;">
+        <img src="./assets/Images/About_Image.jpeg" style="width: 1540px; height:700px;"><br><br>
     </div>
 </div>
-</div> -->
-
-
-
-
-
-
-<div class="row">
-    <div class="col-6 m-auto">
-        <div class = "card m-auto">
-            <div class = "card-header" align="center" style="font-size: 30px;">
-                <b>GreenGrocer Login</b>
-            </div>
-            <div class = "card-body">
-                <form #loginForm='ngForm' (ngSubmit)="loginSubmit2(loginForm.value)">
-                    <div class="form-group col-12">
-                        <label style="font-size: 20px;">Email</label>
-                        <input class = "form-control" required ngModel name="email">
-                    </div><br>
-                    <div class="form-group col-12">
-                        <label style="font-size: 20px;">Password</label>
-                        <input type="password" class = "form-control" required ngModel name="password">
-                    </div><br>
-                    <div class="form-group col-12">
-                        <button [disabled]="!loginForm.valid" type="submit" class="btn btn-success"> Login </button>&nbsp;&nbsp;&nbsp;
-                        <button type="button" class="btn btn-secondary ml-2"> cancel </button>
+<div style="float:right; width:50%;">
+    <br><br><br><br>
+    <div style="font-style: oblique; text-align: center;">
+        <br><br><br>
+        <div class="row" style="text-align: left;">
+            <div class="col-10 m-auto">
+                <div class = "card m-auto shadow-sm" style="background-color:cornsilk">
+                    <div class = "card-header" align="center" style="font-size: 30px;color: crimson;">
+                        <b>GreenGrocers</b>
+                    </div>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
+                    <div class = "card-body">
+                        <form #loginForm='ngForm' (ngSubmit)="loginSubmit2(loginForm.value)">
+                            <div class="form-group col-12">
+                                <label style="font-size: 20px;color: darkmagenta;"><b>Email</b></label>
+                                <input class = "form-control" required ngModel name="email">
+                            </div><br>
+                            <div class="form-group col-12">
+                                <label style="font-size: 20px;color: darkmagenta;"><b>Password</b></label>
+                                <input type="password" class = "form-control" required ngModel name="password">
+                            </div><br>
+                            <div class="form-group col-4" style="text-align: center;">
+                                <button [disabled]="!loginForm.valid" type="submit" style="font-style: oblique;font-size: 20px;;margin-left: 250px;color: crimson;"><b>Login</b> </button>&nbsp;&nbsp;&nbsp;&nbsp;
+                                <a routerLink="/register" style="margin-left:-150px;">New User</a>
+                            </div>
+                        </form>
                     </div>
-                </form>
+                </div>
             </div>
         </div>
-    </div>
-</div>
