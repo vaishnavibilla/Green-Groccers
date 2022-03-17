@@ -19,7 +19,7 @@ export class LoginComponent implements OnInit {
 
   }
 
-  ngOnInit(): void {
+  ngOnInit() : void{
   }
 
   loginSubmit(): void {
@@ -38,31 +38,9 @@ export class LoginComponent implements OnInit {
         }
       }); 
   }
+  showDetails(result:any){
+    alert(result);
+  }
 }
 
 
-// import { Component, OnInit } from '@angular/core';
-// import { NgForm } from '@angular/forms';
-// import { AuthService } from '../auth.service';
-// @Component({
-//   selector: 'app-login',
-//   templateUrl: './login.component.html',
-//   styleUrls: ['./login.component.css']
-// })
-// export class LoginComponent implements OnInit {
-//   constructor(private authService:AuthService){ }
-
-//   ngOnInit(){
-//   }
-
-//   onLogin(loginForm : NgForm){
-//     console.log(loginForm.value);
-//     const user = this.authService.authUser(loginForm.value);
-//     if(user){
-//       console.log('Login Succesful');
-//     }
-//     else{
-//       console.log('Login unsuccesful');
-//     }
-//   }
-// } 
