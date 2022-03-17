@@ -1,6 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { userService } from '../user.service';
+import { Router } from '@angular/router';
+import { LoginComponent } from '../login/login.component';
 
 @Component({
   selector: 'app-register',
@@ -10,8 +12,9 @@ import { userService } from '../user.service';
 export class RegisterComponent implements OnInit {
 
   users: any;
+  userName : any
 
-  constructor(private service: userService) { 
+  constructor(private router: Router,private service: userService) { 
     this.users = {name: '', phone:' ',email: '', password:''};
   }
 
@@ -28,5 +31,6 @@ export class RegisterComponent implements OnInit {
   }
   registerEmp() {
     this.service.registerEmp(this.users).subscribe();
+    this.router.navigate(['login']);
   }
 }
