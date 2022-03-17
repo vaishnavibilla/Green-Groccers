@@ -1,3 +1,4 @@
+<app-header></app-header>
 <!DOCTYPE html>
 <html>
 <head>
@@ -25,57 +26,54 @@
  
       /* Change the link color on hover */
       li a:hover {
-        background-color: #90faaa;
+        background-color:#00800085;
         color: #fff;
       }
       .icon {
-        margin-right: 10px;
+        margin-right: -100px;
       }
   </style>
 </head>
 <body>
-  <ul class="navbar-nav me-auto">
+  <ul class="navbar-nav me-auto navbar-fixed-top">
         <li class = "nav-item">
-          <a href="#" class="active">User Profile</a>
+          <a routerLink="/user-profile" class="active">User Profile</a>
         </li>
-        <!-- <li class="nav-item dropdown" ngbDropdown>
-          <a class="nav-link dropdown-toggle" id="dropdown01" role="button" data-bs-toggle="dropdown" aria-expanded="false" ngbDropdownToggle>
-            Product
-          </a>
-          <ul class="dropdown-menu"  ngbDropdownMenu aria-labelledby="dropdown01">
-            <li ngbDropdownItem><a class="dropdown-item" href="#">Fruits</a></li>
-            <li ngbDropdownItem><a class="dropdown-item" href="#"></a>Vegetables</li>
-          </ul>
-        </li> -->
-        <div ngbDropdown class="btn-group">
-          <button type="button" class="btn btn-success">Products</button>
-          <button
-            type="button"
-            class="btn btn-success dropdown-toggle dropdown-toggle-split"
-            ngbDropdownToggle
-            aria-expanded="false"
-          >
-            <span class="visually-hidden">Toggle Dropdown</span>
-          </button>
-          <ul ngbDropdownMenu class="dropdown-menu">
-            <li><a class="dropdown-item" routerLink="/fruits">Fruits</a></li>
-            <li><a class="dropdown-item" routerLink="/vegetables">Vegetables</a></li>
-          </ul>
-        </div>
-        
-        <li class = "nav-item">
-          <a href="#" class="active">My Orders</a>
-        </li>
-        <li class = "nav-item">
-          <a href="#" class="active">User Cart</a>
+        <li>
+          <a routerLink="/fruits" class="active">Products</a>
         </li>
         <li class = "nav-item">
           <a routerLink="/about" class="active">About</a>
         </li> 
         <li class = "nav-item">
-          <a href="#" class="active">Logout</a>
+          <a routerLink="/userhelp" class="active">User Help</a>
         </li>
     </ul>
+    <div class="row offset-md-3" style="margin-top: 4px;">
+      <div class="col-md-3" *ngFor="let item of items" style="margin-top: 4px;">
+  
+          <div class="card" style="width:15rem;" >
+              <div align="center">
+              <img class="card-image" [src]="item.imagePath" alt="Card Image Cap" style="width:150px; height:150px;" />
+          </div>
+              <div class="card-body">
+                  <h3 class="card-title" style="font-size: 20px;"><b> {{item.Name}}</b></h3>
+                  <p class="card-text"> Return within {{item.ret}} hrs</p>
+              </div>
+  
+              <div class="row">
+                  <div class="col">
+                      <div>  {{item.price | currency:'INR'}}{{item.q}} </div>
+                  </div>
+                  <!-- <div class="col">
+                      <div> <button class="btn btn-primary" (click)="addToCart(item)"> Add To Cart </button> </div>
+                  </div> -->
+              </div>
+          </div>
+      </div>
+  </div>
+  
+  
 </body>
 </html>
 
