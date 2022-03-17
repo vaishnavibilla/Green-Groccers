@@ -1,26 +1,34 @@
-<h1 align="center"> FRUITS </h1>
 
-
+<app-header></app-header>
+<body>
+    <h1 align="center" style="font-size: 30px;text-align: center;"><b> PRODUCTS </b></h1>
 <div class="row offset-md-1" style="margin-top: 4px;">
     <div class="col-md-3" *ngFor="let fruit of fruits" style="margin-top: 4px;">
 
-        <div class="card" style="width:15rem;" >
+        <div class="card text-center" style="width:15rem;" >
             <div align="center">
             <img class="card-image" [src]="fruit.imagePath" alt="Card Image Cap" style="width:150px; height:150px;" />
         </div>
-            <div class="card-body">
-                <h3 class="card-title"> {{fruit.fruitName}}</h3>
+            <div class="card-body card-container">
+                <h3 class="card-title" style="font-size: 20px;"><b> {{fruit.fruitName}}</b></h3>
+                <p class="card-text"><b>Return within {{fruit.ret}} hrs</b></p>
             </div>
 
             <div class="row">
-                <div class="col">
-                    <div>  {{fruit.price | currency:'INR'}} </div>
+                <div class="row">
+                    <div> <b> {{fruit.price | currency:'INR'}}{{fruit.q}}</b></div>
                 </div>
+                <div class="row">
+                    <!-- <div> <button class="btn btn-primary" (click)="addToCart(fruit)"> Add To Cart </button> </div> -->
+                    <button class="btn btn-outline-danger btn-sm mt-2" type="button" style="margin-left: 13px;"
+                    (click)="btnAddToCart(fruit)" [disabled]="itemExists===fruit.fruitName">Add To Cart
+                    </button>
+                </div>  
 
-                <div class="col">
-                    <div> <button class="btn btn-primary" (click)="addToCart(fruit)"> Add To Cart </button> </div>
-                </div>
             </div>
         </div>
     </div>
 </div>
+</body>
+
+
